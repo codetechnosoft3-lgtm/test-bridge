@@ -1,186 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MegMesh Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKart - Flipkart Style UI</title>
 
-        body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
+body{
+    background:#f1f3f6;
+}
 
-        header h1 {
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
+/* HEADER */
+header{
+    background:#2874f0;
+    padding:10px 50px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+.logo{
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+}
 
-        nav ul li {
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.search-bar{
+    flex:1;
+    display:flex;
+}
 
-        nav ul li:hover {
-            color: #ffd369;
-        }
+.search-bar input{
+    width:100%;
+    padding:8px 10px;
+    border:none;
+    outline:none;
+}
 
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
+.search-bar button{
+    background:#ffe500;
+    border:none;
+    padding:8px 15px;
+    cursor:pointer;
+}
 
-        .hero h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.header-right{
+    display:flex;
+    gap:20px;
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
+/* CATEGORY NAV */
+.category-nav{
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    box-shadow:0 1px 5px rgba(0,0,0,0.1);
+    font-size:14px;
+}
 
-        .btn {
-            padding: 12px 30px;
-            font-size: 16px;
-            border: none;
-            border-radius: 30px;
-            background: #ffd369;
-            color: #333;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.category-nav div{
+    cursor:pointer;
+    transition:0.3s;
+}
 
-        .btn:hover {
-            background: #ffb703;
-            transform: scale(1.05);
-        }
+.category-nav div:hover{
+    color:#2874f0;
+}
 
-        .categories {
-            background: #fff;
-            color: #333;
-            padding: 40px 20px;
-            text-align: center;
-        }
+/* BANNER */
+.banner{
+    margin:20px;
+    background:linear-gradient(90deg,#2874f0,#6a11cb);
+    color:#fff;
+    padding:40px;
+    border-radius:6px;
+    text-align:center;
+}
 
-        .categories h3 {
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
+.banner h2{
+    font-size:28px;
+}
 
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+/* PRODUCT SECTION */
+.products{
+    padding:20px 50px;
+}
 
-        .category-card {
-            background: #f4f4f4;
-            padding: 30px 15px;
-            border-radius: 10px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
+.products h3{
+    margin-bottom:15px;
+}
 
-        .category-card:hover {
-            background: #667eea;
-            color: #fff;
-            transform: translateY(-5px);
-        }
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #111;
-            font-size: 14px;
-        }
+.product-card{
+    background:#fff;
+    padding:15px;
+    border-radius:6px;
+    text-align:center;
+    transition:0.3s;
+    cursor:pointer;
+}
 
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+.product-card:hover{
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    margin-bottom:10px;
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:gray;
+    font-size:13px;
+}
+
+/* FOOTER */
+footer{
+    background:#172337;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .category-nav{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .products{
+        padding:20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>MegMesh Shop</h1>
-    <nav>
-        <ul>
-            <li>Grocery</li>
-            <li>Mobiles</li>
-            <li>Electronics</li>
-            <li>Home & Kitchen</li>
-            <li>Fashion</li>
-            <li>Shoes</li>
-            <li>Bags</li>
-        </ul>
-    </nav>
+    <div class="logo">ShopKart</div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button>Search</button>
+    </div>
+
+    <div class="header-right">
+        <div>Login</div>
+        <div>Become a Seller</div>
+        <div>Cart 🛒</div>
+    </div>
 </header>
 
-<section class="hero">
-    <h2>Welcome to MegMesh Shop</h2>
-    <p>Your one-stop destination for all your shopping needs. Discover amazing products at unbeatable prices.</p>
-    <button class="btn" onclick="scrollToCategories()">Enter Site</button>
-</section>
+<div class="category-nav">
+    <div>Grocery</div>
+    <div>Mobiles</div>
+    <div>Fashion</div>
+    <div>Electronics</div>
+    <div>Home</div>
+    <div>Appliances</div>
+    <div>Travel</div>
+    <div>Beauty</div>
+</div>
 
-<section class="categories" id="categories">
-    <h3>Shop by Category</h3>
-    <div class="category-grid">
-        <div class="category-card">Grocery</div>
-        <div class="category-card">Mobiles</div>
-        <div class="category-card">Electronics</div>
-        <div class="category-card">Home & Kitchen</div>
-        <div class="category-card">Fashion</div>
-        <div class="category-card">Shoes</div>
-        <div class="category-card">Bags</div>
+<div class="banner">
+    <h2>Big Billion Style Sale 🔥</h2>
+    <p>Up to 70% OFF on Top Products</p>
+</div>
+
+<section class="products">
+    <h3>Best Deals</h3>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x150">
+            <p>Smartphone XYZ</p>
+            <p class="price">₹14,999 <span class="old-price">₹19,999</span></p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x150">
+            <p>Wireless Headphones</p>
+            <p class="price">₹1,499 <span class="old-price">₹2,999</span></p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x150">
+            <p>Men's Casual Shoes</p>
+            <p class="price">₹999 <span class="old-price">₹1,999</span></p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x150">
+            <p>Kitchen Mixer</p>
+            <p class="price">₹2,499 <span class="old-price">₹3,999</span></p>
+        </div>
+
     </div>
 </section>
 
 <footer>
-    © 2026 MegMesh Shop | All Rights Reserved
+    © 2026 ShopKart Clone | Designed for Practice
 </footer>
-
-<script>
-    function scrollToCategories() {
-        document.getElementById("categories").scrollIntoView({ behavior: "smooth" });
-    }
-</script>
 
 </body>
 </html>
