@@ -1,194 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Limited Time Offer</title>
+    <meta charset="UTF-8">
+    <title>MegMesh Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
 
-body{
-background:#ffffff;
-color:#111;
-text-align:center;
-}
+        header h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
 
-/* Announcement Bar */
-.topbar{
-background:#000;
-color:#fff;
-padding:8px;
-font-size:14px;
-font-weight:600;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-/* Logo */
-.logo{
-padding:15px 0;
-}
-.logo img{
-width:140px;
-}
+        nav ul li {
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-/* Product Image */
-.product{
-padding:10px;
-}
-.product img{
-width:90%;
-max-width:420px;
-}
+        nav ul li:hover {
+            color: #ffd369;
+        }
 
-/* Product Title */
-.title{
-font-size:20px;
-font-weight:600;
-padding:10px 20px;
-}
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
 
-/* Price Section */
-.price-box{
-margin-top:10px;
-}
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-.old-price{
-text-decoration:line-through;
-color:#888;
-font-size:18px;
-}
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
 
-.new-price{
-font-size:42px;
-color:#e60000;
-font-weight:800;
-margin:5px 0;
-}
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            background: #ffd369;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.discount{
-color:green;
-font-weight:600;
-font-size:14px;
-}
+        .btn:hover {
+            background: #ffb703;
+            transform: scale(1.05);
+        }
 
-/* Urgency */
-.urgency{
-color:red;
-font-weight:700;
-margin-top:10px;
-font-size:16px;
-}
+        .categories {
+            background: #fff;
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-/* CTA Button */
-.buy-btn{
-display:block;
-width:90%;
-max-width:420px;
-margin:20px auto;
-padding:15px;
-background:#e60000;
-color:#fff;
-font-size:18px;
-font-weight:700;
-text-decoration:none;
-border-radius:40px;
-transition:0.3s;
-}
+        .categories h3 {
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
 
-.buy-btn:hover{
-background:#cc0000;
-}
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-/* Trust Section */
-.trust{
-background:#f5f5f5;
-padding:15px;
-font-size:14px;
-color:#333;
-}
+        .category-card {
+            background: #f4f4f4;
+            padding: 30px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-.trust p{
-margin:5px 0;
-}
+        .category-card:hover {
+            background: #667eea;
+            color: #fff;
+            transform: translateY(-5px);
+        }
 
-/* Sticky Bottom Button */
-.sticky-buy{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#e60000;
-color:#fff;
-padding:15px;
-font-size:18px;
-font-weight:700;
-text-decoration:none;
-}
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #111;
+            font-size: 14px;
+        }
 
-.sticky-buy:hover{
-background:#cc0000;
-}
-
-/* Footer */
-.footer{
-background:#000;
-color:#fff;
-font-size:12px;
-padding:10px;
-margin-top:60px;
-}
-</style>
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="topbar">
-🔥 BIG BACHAT DHAMAAL – LIMITED STOCK AVAILABLE 🔥
-</div>
+<header>
+    <h1>MegMesh Shop</h1>
+    <nav>
+        <ul>
+            <li>Grocery</li>
+            <li>Mobiles</li>
+            <li>Electronics</li>
+            <li>Home & Kitchen</li>
+            <li>Fashion</li>
+            <li>Shoes</li>
+            <li>Bags</li>
+        </ul>
+    </nav>
+</header>
 
-<div class="logo">
-<img src="logo.png" alt="Logo">
-</div>
+<section class="hero">
+    <h2>Welcome to MegMesh Shop</h2>
+    <p>Your one-stop destination for all your shopping needs. Discover amazing products at unbeatable prices.</p>
+    <button class="btn" onclick="scrollToCategories()">Enter Site</button>
+</section>
 
-<div class="product">
-<img src="product.png" alt="Product">
-</div>
+<section class="categories" id="categories">
+    <h3>Shop by Category</h3>
+    <div class="category-grid">
+        <div class="category-card">Grocery</div>
+        <div class="category-card">Mobiles</div>
+        <div class="category-card">Electronics</div>
+        <div class="category-card">Home & Kitchen</div>
+        <div class="category-card">Fashion</div>
+        <div class="category-card">Shoes</div>
+        <div class="category-card">Bags</div>
+    </div>
+</section>
 
-<div class="title">
-Prestige 5L Aluminium Pressure Cooker
-</div>
+<footer>
+    © 2026 MegMesh Shop | All Rights Reserved
+</footer>
 
-<div class="price-box">
-<div class="old-price">₹1,299</div>
-<div class="new-price">₹298</div>
-<div class="discount">78% OFF</div>
-</div>
-
-<div class="urgency">
-⏳ Limited Time Offer – Order Now!
-</div>
-
-<a href="#" class="buy-btn">🛒 SHOP NOW</a>
-
-<div class="trust">
-<p>✔ Cash on Delivery Available</p>
-<p>✔ Secure Payment</p>
-<p>✔ Fast Shipping Across India</p>
-</div>
-
-<div class="footer">
-© 2026 MegMesh Shop. All Rights Reserved.
-</div>
-
-<a href="#" class="sticky-buy">
-🛒 BUY NOW – ₹298
-</a>
+<script>
+    function scrollToCategories() {
+        document.getElementById("categories").scrollIntoView({ behavior: "smooth" });
+    }
+</script>
 
 </body>
 </html>
